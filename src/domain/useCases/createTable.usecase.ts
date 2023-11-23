@@ -20,7 +20,8 @@ export class CreateTable implements CreateTableUseCase{
     execute({base, limit=10}: CreateTableOptions){
         let text = '';
         for(let i= 1; i<=( limit ); i++){
-            text +=  `${base} X ${i} = ${base * i} \n`;
+            text +=  `${base} X ${i} = ${base * i}`;
+            if(i<limit) text += '\n';
         }
 
         return text;
